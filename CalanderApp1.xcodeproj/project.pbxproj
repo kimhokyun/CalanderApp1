@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		771C87DA2A8A669A009601E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C87D92A8A669A009601E2 /* AppDelegate.swift */; };
 		771C87DC2A8A669A009601E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C87DB2A8A669A009601E2 /* SceneDelegate.swift */; };
-		771C87DE2A8A669A009601E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C87DD2A8A669A009601E2 /* ViewController.swift */; };
 		771C87E12A8A669A009601E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771C87DF2A8A669A009601E2 /* Main.storyboard */; };
 		771C87E32A8A669C009601E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 771C87E22A8A669C009601E2 /* Assets.xcassets */; };
 		771C87E62A8A669C009601E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771C87E42A8A669C009601E2 /* LaunchScreen.storyboard */; };
-		771C87F12A8A669C009601E2 /* CalanderApp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C87F02A8A669C009601E2 /* CalanderApp1Tests.swift */; };
-		771C87FB2A8A669C009601E2 /* CalanderApp1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C87FA2A8A669C009601E2 /* CalanderApp1UITests.swift */; };
-		771C87FD2A8A669C009601E2 /* CalanderApp1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C87FC2A8A669C009601E2 /* CalanderApp1UITestsLaunchTests.swift */; };
+		771C880D2A8A66E6009601E2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C880A2A8A66E5009601E2 /* Data.swift */; };
+		771C88102A8A6703009601E2 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C880F2A8A6703009601E2 /* CustomCollectionViewCell.swift */; };
+		771C88122A8A6F69009601E2 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C88112A8A6F69009601E2 /* DetailVC.swift */; };
+		771C88142A8A6F99009601E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C88132A8A6F99009601E2 /* ViewController.swift */; };
+		771C88162A8A7CAC009601E2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C88152A8A7CAC009601E2 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +40,17 @@
 		771C87D62A8A669A009601E2 /* CalanderApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalanderApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		771C87D92A8A669A009601E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		771C87DB2A8A669A009601E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		771C87DD2A8A669A009601E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		771C87E02A8A669A009601E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		771C87E22A8A669C009601E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		771C87E52A8A669C009601E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		771C87E72A8A669C009601E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771C87EC2A8A669C009601E2 /* CalanderApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalanderApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		771C87F02A8A669C009601E2 /* CalanderApp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanderApp1Tests.swift; sourceTree = "<group>"; };
 		771C87F62A8A669C009601E2 /* CalanderApp1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalanderApp1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		771C87FA2A8A669C009601E2 /* CalanderApp1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanderApp1UITests.swift; sourceTree = "<group>"; };
-		771C87FC2A8A669C009601E2 /* CalanderApp1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanderApp1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		771C880A2A8A66E5009601E2 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		771C880F2A8A6703009601E2 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		771C88112A8A6F69009601E2 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		771C88132A8A6F99009601E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		771C88152A8A7CAC009601E2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				771C87D82A8A669A009601E2 /* CalanderApp1 */,
-				771C87EF2A8A669C009601E2 /* CalanderApp1Tests */,
-				771C87F92A8A669C009601E2 /* CalanderApp1UITests */,
 				771C87D72A8A669A009601E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,32 +99,19 @@
 		771C87D82A8A669A009601E2 /* CalanderApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				771C88112A8A6F69009601E2 /* DetailVC.swift */,
 				771C87D92A8A669A009601E2 /* AppDelegate.swift */,
 				771C87DB2A8A669A009601E2 /* SceneDelegate.swift */,
-				771C87DD2A8A669A009601E2 /* ViewController.swift */,
+				771C880A2A8A66E5009601E2 /* Data.swift */,
 				771C87DF2A8A669A009601E2 /* Main.storyboard */,
 				771C87E22A8A669C009601E2 /* Assets.xcassets */,
 				771C87E42A8A669C009601E2 /* LaunchScreen.storyboard */,
 				771C87E72A8A669C009601E2 /* Info.plist */,
+				771C880F2A8A6703009601E2 /* CustomCollectionViewCell.swift */,
+				771C88132A8A6F99009601E2 /* ViewController.swift */,
+				771C88152A8A7CAC009601E2 /* Util.swift */,
 			);
 			path = CalanderApp1;
-			sourceTree = "<group>";
-		};
-		771C87EF2A8A669C009601E2 /* CalanderApp1Tests */ = {
-			isa = PBXGroup;
-			children = (
-				771C87F02A8A669C009601E2 /* CalanderApp1Tests.swift */,
-			);
-			path = CalanderApp1Tests;
-			sourceTree = "<group>";
-		};
-		771C87F92A8A669C009601E2 /* CalanderApp1UITests */ = {
-			isa = PBXGroup;
-			children = (
-				771C87FA2A8A669C009601E2 /* CalanderApp1UITests.swift */,
-				771C87FC2A8A669C009601E2 /* CalanderApp1UITestsLaunchTests.swift */,
-			);
-			path = CalanderApp1UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771C87DE2A8A669A009601E2 /* ViewController.swift in Sources */,
+				771C88142A8A6F99009601E2 /* ViewController.swift in Sources */,
+				771C88102A8A6703009601E2 /* CustomCollectionViewCell.swift in Sources */,
+				771C880D2A8A66E6009601E2 /* Data.swift in Sources */,
 				771C87DA2A8A669A009601E2 /* AppDelegate.swift in Sources */,
+				771C88162A8A7CAC009601E2 /* Util.swift in Sources */,
 				771C87DC2A8A669A009601E2 /* SceneDelegate.swift in Sources */,
+				771C88122A8A6F69009601E2 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771C87F12A8A669C009601E2 /* CalanderApp1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771C87FD2A8A669C009601E2 /* CalanderApp1UITestsLaunchTests.swift in Sources */,
-				771C87FB2A8A669C009601E2 /* CalanderApp1UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
