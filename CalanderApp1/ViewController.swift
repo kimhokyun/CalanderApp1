@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     var dayTitle:[String] = ["일","월","화","수","목","금","토"]
     var days:[Int] = []{
         didSet{
-            for i in 0...(current.weekday ?? 0){
-                days.insert(i, at: 0)
-            }
+//            for i in 0...(current.weekday ?? 0){
+//                days.insert(i, at: 0)
+//            }
         }
     }
+    var firstDayWeekDay = 0
     var cal:Calendar = Calendar.current
     var current:DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .weekday], from: Date.now){
         didSet{
@@ -27,8 +28,33 @@ class ViewController: UIViewController {
             
             var firstDay = DateComponents(year: year, month: month, day: 1)
             var firstDay_Date = cal.date(from:DateComponents(year: year, month: month, day: 1))
-            
+            guard let fy = firstDay.year, let fm = firstDay.month, let fd = firstDay.day else {return}
+            var startWeekDay = weekday(year: fy, month: fm, day: fd)!
+            var weekDayNum = 0
+            switch startWeekDay {
+            case "월":
+                weekDayNum = 0
+            case "화":
+                weekDayNum = 1
+            case "수":
+                weekDayNum = 2
+            case "목":
+                weekDayNum = 3
+            case "금":
+                weekDayNum = 4
+            case "토":
+                weekDayNum = 5
+            default:
+                weekDayNum = 6
+            }
             days = []
+            if weekDayNum != 6 {
+                for i in 0...weekDayNum{
+                    days.insert(0, at: 0)
+                }
+            }
+            
+
             while firstDay.month == self.month {
                 var md = firstDay
                 guard let apDay = md.day else {return}
@@ -69,15 +95,42 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-
+        
+        
+        
+        current = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .weekday], from: Date.now)
         guard let cy = current.year, let cm = current.month else {return}
         self.year = cy
         self.month = cm
         
-
-        
         var firstDay = DateComponents(year: year, month: month, day: 1)
         var firstDay_Date = cal.date(from:DateComponents(year: year, month: month, day: 1))
+        guard let fy = firstDay.year, let fm = firstDay.month, let fd = firstDay.day else {return}
+        var startWeekDay = weekday(year: fy, month: fm, day: fd)!
+        var weekDayNum = 0
+        switch startWeekDay {
+        case "월":
+            weekDayNum = 0
+        case "화":
+            weekDayNum = 1
+        case "수":
+            weekDayNum = 2
+        case "목":
+            weekDayNum = 3
+        case "금":
+            weekDayNum = 4
+        case "토":
+            weekDayNum = 5
+        default:
+            weekDayNum = 6
+        }
+        days = []
+        if weekDayNum != 6 {
+            for i in 0...weekDayNum{
+                days.insert(0, at: 0)
+            }
+        }
+
         while firstDay.month == self.month {
             var md = firstDay
             guard let apDay = md.day else {return}
@@ -86,11 +139,29 @@ class ViewController: UIViewController {
             firstDay_Date = cal.date(byAdding: .day, value: 1, to: fdd)
             firstDay = cal.dateComponents([.year, .month, .day], from: firstDay_Date!)
         }
+        
+
+        
         updatePage()
 
 
         
     }
+    func weekday(year: Int, month: Int, day: Int) -> String? {
+        let calendar = Calendar(identifier: .gregorian)
+        
+        guard let targetDate: Date = {
+            let comps = DateComponents(calendar:calendar, year: year, month: month, day: day)
+            return comps.date
+            }() else { return nil }
+        
+        let day = Calendar.current.component(.weekday, from: targetDate) - 1
+        
+        return Calendar.current.shortWeekdaySymbols[day] // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    //    return Calendar.current.standaloneWeekdaySymbols[day] // ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+    //    return Calendar.current.veryShortWeekdaySymbols[day] // ["S", "M", "T", "W", "T", "F", "S"]
+    }
+    
     @IBAction func addMonth(_ sender: Any) {
         let date = cal.date(from: current)!
         let nextMonth = cal.date(byAdding: .month, value: 1, to: date)!
@@ -137,7 +208,11 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource,UIC
         if indexPath.section == 0 {
             cell.dayLabel.text = dayTitle[indexPath.row]
         }else {
-            cell.dayLabel.text = String(days[indexPath.row])
+            if days[indexPath.row] == 0 {
+                cell.dayLabel.text = ""
+            } else {
+                cell.dayLabel.text = String(days[indexPath.row])
+            }
         }
         
         if indexPath.row % 7 == 0 {

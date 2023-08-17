@@ -19,3 +19,19 @@ func makeTimeFormat(format:String,date:Date) -> String{
 //
 //// 날짜의 구성요소 여러 개 가져오기
 //let components2 = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: now)
+
+
+func weekday(year: Int, month: Int, day: Int) -> String? {
+    let calendar = Calendar(identifier: .gregorian)
+    
+    guard let targetDate: Date = {
+        let comps = DateComponents(calendar:calendar, year: year, month: month, day: day)
+        return comps.date
+        }() else { return nil }
+    
+    let day = Calendar.current.component(.weekday, from: targetDate) - 1
+    
+    return Calendar.current.shortWeekdaySymbols[day] // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+//    return Calendar.current.standaloneWeekdaySymbols[day] // ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+//    return Calendar.current.veryShortWeekdaySymbols[day] // ["S", "M", "T", "W", "T", "F", "S"]
+}
